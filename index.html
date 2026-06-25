@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anis Store</title>
+<title>ANIS STORE</title>
 
 <style>
 *{
@@ -19,20 +19,23 @@ color:white;
 }
 
 header{
-background:linear-gradient(135deg,#000000,#003366);
-padding:60px 20px;
+background:linear-gradient(135deg,#000,#003366);
+padding:40px 20px;
 text-align:center;
 }
 
-.logo{
-font-size:45px;
-font-weight:bold;
-color:#00aaff;
+.logo-img{
+width:220px;
+max-width:90%;
+margin:auto;
+display:block;
+margin-bottom:15px;
+border-radius:20px;
 }
 
 .subtitle{
-margin-top:10px;
 font-size:18px;
+margin-top:10px;
 }
 
 .btn{
@@ -58,17 +61,29 @@ margin-bottom:20px;
 
 .cards{
 display:flex;
-flex-wrap:wrap;
-justify-content:center;
+flex-direction:column;
+align-items:center;
 gap:15px;
 }
 
 .card{
 background:#161b22;
 padding:20px;
-width:250px;
+width:90%;
+max-width:450px;
 border-radius:15px;
 border:1px solid #00aaff;
+}
+
+details summary{
+cursor:pointer;
+font-size:22px;
+font-weight:bold;
+list-style:none;
+}
+
+details p{
+margin-top:10px;
 }
 
 footer{
@@ -83,10 +98,11 @@ margin-top:30px;
 <body>
 
 <header>
-<div class="logo">ANIS STORE</div>
+
+<img src="logo.jpg" class="logo-img">
 
 <p class="subtitle">
-خدمات Free Fire و TikTok و Instagram
+خدمات السوشيال ميديا بسرعة وجودة عالية
 </p>
 
 <a class="btn"
@@ -97,63 +113,11 @@ href="https://wa.me/213797310724?text=السلام عليكم، أريد طلب 
 </header>
 
 <section class="section">
+
 <h2>خدماتنا</h2>
 
 <div class="cards">
 
-<div class="card">
-💎 جواهر Free Fire
-</div>
-
-<div class="card">
-👑 عضوية أسبوعية
-</div>
-
-<div class="card">
-👑 عضوية شهرية
-</div>
-
-<div class="card">
-🎟️ Booyah Pass
-</div>
-
-<div class="card">
-📈 TikTok Followers
-</div>
-
-<div class="card">
-❤️ TikTok Likes
-</div>
-
-<div class="card">
-👁️ TikTok Views
-</div>
-
-<div class="card">
-📸 Instagram Followers
-</div>
-
-</div>
-</section>
-
-<section class="section">
-<h2>التواصل</h2>
-
-<p>WhatsApp: 0797310724</p>
-
-<a class="btn"
-href="https://wa.me/213797310724">
-راسلنا الآن
-</a>
-
-</section>
-
-<footer>
-© 2026 ANIS STORE
-</footer>
-
-</body>
-</html>
 <details class="card">
 <summary>📈 TikTok Followers</summary>
 
@@ -173,3 +137,31 @@ href="https://wa.me/213797310724">
 <p>10000 Followers = 27$</p>
 
 </details>
+
+<div class="card">❤️ TikTok Likes</div>
+<div class="card">👁️ TikTok Views</div>
+<div class="card">📸 Instagram Followers</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>التواصل</h2>
+
+<p>WhatsApp: 0797310724</p>
+
+<a class="btn"
+href="https://wa.me/213797310724">
+راسلنا الآن
+</a>
+
+</section>
+
+<footer>
+© 2026 ANIS STORE
+</footer>
+
+</body>
+</html>
