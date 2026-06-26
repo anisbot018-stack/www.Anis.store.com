@@ -1,541 +1,476 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ANIS STORE</title>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
 scroll-behavior:smooth;
+font-family:'Cairo',sans-serif;
 }
-
 body{
 background:#0d1117;
-color:#fff;
+color:white;
+overflow-x:hidden;
 }
-
+::-webkit-scrollbar{
+width:8px;
+}
+::-webkit-scrollbar-thumb{
+background:#00aaff;
+border-radius:20px;
+}
 header{
 background:linear-gradient(135deg,#000,#003b80);
-padding:50px 20px;
+padding:70px 20px;
 text-align:center;
+position:relative;
+overflow:hidden;
 }
-
 .logo-img{
 width:380px;
 max-width:95%;
 display:block;
 margin:auto;
-margin-bottom:20px;
 border-radius:25px;
-animation:fadeLogo 1.5s;
-}
-
-@keyframes fadeLogo{
-from{
 opacity:0;
-transform:translateY(-30px);
+animation:logo 2s forwards;
 }
-to{
+@keyframes logo{
+0%{
+opacity:0;
+transform:translateY(-60px) scale(.8);
+}
+100%{
 opacity:1;
-transform:translateY(0);
+transform:translateY(0) scale(1);
 }
 }
-
 .subtitle{
-font-size:20px;
-color:#ddd;
-margin-bottom:25px;
+margin-top:20px;
+font-size:22px;
+color:#d8d8d8;
 }
-
 .btn{
 display:inline-block;
-padding:14px 30px;
+margin-top:25px;
+padding:15px 35px;
 background:#00aaff;
-color:#fff;
+border-radius:15px;
+color:white;
 text-decoration:none;
-border-radius:12px;
 font-weight:bold;
 transition:.3s;
 }
-
 .btn:hover{
-background:#0088cc;
 transform:scale(1.05);
+background:#0090dd;
 }
-
 .section{
-padding:40px 15px;
+padding:60px 15px;
 }
-
 .section h2{
 text-align:center;
+font-size:35px;
+margin-bottom:35px;
 color:#00aaff;
-margin-bottom:25px;
-font-size:32px;
 }
-
 .cards{
 display:flex;
 flex-direction:column;
 gap:20px;
 align-items:center;
 }
-
 .card{
 background:#161b22;
-width:95%;
-max-width:800px;
-padding:20px;
-border-radius:18px;
 border:1px solid #00aaff;
-box-shadow:0 0 15px rgba(0,170,255,.15);
+border-radius:18px;
+width:95%;
+max-width:850px;
+padding:20px;
+transition:.4s;
+box-shadow:0 0 25px rgba(0,170,255,.10);
 }
-
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 0 25px rgba(0,170,255,.35);
+}
 summary{
-font-size:24px;
-font-weight:bold;
 cursor:pointer;
+font-size:25px;
+font-weight:700;
 }
-
-h3{
-margin-top:20px;
-margin-bottom:10px;
-color:#00aaff;
-}
-
 table{
 width:100%;
 border-collapse:collapse;
-margin-top:15px;
+margin-top:18px;
 }
-
 th{
 background:#00aaff;
-padding:12px;
+padding:15px;
 }
-
 td{
-padding:12px;
+padding:15px;
 text-align:center;
 border-bottom:1px solid #333;
 }
-
 .order-btn{
 background:#00aaff;
-padding:8px 16px;
+padding:9px 18px;
 border-radius:10px;
 text-decoration:none;
 color:white;
 font-weight:bold;
+transition:.3s;
 }
-
 .order-btn:hover{
-background:#0088cc;
+background:#008fd9;
 }
-
+.search{
+width:95%;
+max-width:700px;
+display:block;
+margin:25px auto;
+padding:16px;
+font-size:18px;
+border:none;
+border-radius:15px;
+outline:none;
+}
 .whatsapp{
 position:fixed;
-bottom:20px;
-left:20px;
+left:18px;
+bottom:18px;
+width:65px;
+height:65px;
 background:#25D366;
-color:white;
-width:60px;
-height:60px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:28px;
 border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
 text-decoration:none;
-box-shadow:0 0 20px rgba(0,0,0,.5);
+color:white;
 z-index:999;
+box-shadow:0 0 20px rgba(0,0,0,.5);
 }
-
-footer{
-background:#000;
-padding:25px;
-text-align:center;
-margin-top:40px;
-}
-
 </style>
-
 </head>
-
-<body>
-
-<a class="whatsapp"
-href="https://wa.me/213797310724">💬</a>
-
-<header>
-
-<img src="940DB6B0-75C4-4E13-B90A-5761363CDCD3.png" class="logo-img">
-
-<p class="subtitle">
-خدمات السوشيال ميديا بأفضل جودة وأفضل سعر
-</p>
-
-<a class="btn"
-href="https://wa.me/213797310724?text=السلام عليكم، أريد طلب خدمة من ANIS STORE">
-اطلب الآن
-</a>
-
-</header>
-
+<!-- ===== شاشة البداية ===== -->
+<div id="loader">
+<img src="940DB6B0-75C4-4E13-B90A-5761363CDCD3.png" class="loader-logo">
+<h2>ANIS STORE</h2>
+<p>Loading...</p>
+</div>
+<style>
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#0d1117;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:99999;
+transition:1s;
+}
+.loader-logo{
+width:220px;
+animation:pulse 2s infinite;
+}
+@keyframes pulse{
+0%{
+transform:scale(.9);
+opacity:.5;
+}
+50%{
+transform:scale(1);
+opacity:1;
+}
+100%{
+transform:scale(.9);
+opacity:.5;
+}
+}
+.search{
+width:95%;
+max-width:700px;
+margin:40px auto;
+display:block;
+padding:16px;
+font-size:18px;
+border-radius:15px;
+border:none;
+outline:none;
+background:#161b22;
+color:white;
+border:1px solid #00aaff;
+}
+.top-btn{
+position:fixed;
+right:20px;
+bottom:20px;
+width:55px;
+height:55px;
+border-radius:50%;
+background:#00aaff;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+font-size:25px;
+cursor:pointer;
+z-index:999;
+display:none;
+}
+.stats{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin:40px 0;
+}
+.stat{
+background:#161b22;
+padding:20px;
+border-radius:15px;
+width:170px;
+text-align:center;
+border:1px solid #00aaff;
+}
+.stat h2{
+color:#00aaff;
+margin-bottom:10px;
+}
+</style>
+<input
+type="text"
+id="search"
+class="search"
+placeholder="🔍 ابحث عن خدمة...">
+<div class="stats">
+<div class="stat">
+<h2>5000+</h2>
+<p>طلب مكتمل</p>
+</div>
+<div class="stat">
+<h2>1200+</h2>
+<p>عميل</p>
+</div>
+<div class="stat">
+<h2>24/7</h2>
+<p>دعم</p>
+</div>
+</div>
+<div class="top-btn" id="topBtn">
+⬆️
+</div>
+<script>
+window.onload=function(){
+setTimeout(function(){
+document.getElementById("loader").style.opacity="0";
+setTimeout(function(){
+document.getElementById("loader").style.display="none";
+},1000);
+},2000);
+}
+const topBtn=document.getElementById("topBtn");
+window.onscroll=function(){
+if(document.documentElement.scrollTop>300){
+topBtn.style.display="flex";
+}else{
+topBtn.style.display="none";
+}
+}
+topBtn.onclick=function(){
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+}
+document.getElementById("search").addEventListener("keyup",function(){
+let value=this.value.toLowerCase();
+let cards=document.querySelectorAll(".card");
+cards.forEach(function(card){
+if(card.innerText.toLowerCase().includes(value)){
+card.style.display="block";
+}else{
+card.style.display="none";
+}
+});
+});
+</script>
+<!-- ===== بانر ترحيبي ===== -->
 <section class="section">
-
-<h2>📈 خدمات TikTok</h2>
-
+<div style="
+max-width:900px;
+margin:auto;
+background:linear-gradient(135deg,#0057b8,#00aaff);
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 0 30px rgba(0,170,255,.25);
+">
+<h1 style="font-size:38px;margin-bottom:15px;">
+🚀 مرحبًا بك في ANIS STORE
+</h1>
+<p style="font-size:20px;line-height:1.8;">
+أفضل متجر لخدمات TikTok و Instagram و Facebook و Free Fire
+بأسعار منافسة وتسليم سريع.
+</p>
+</div>
+</section>
+<!-- ===== لماذا تختارنا ===== -->
+<section class="section">
+<h2>⭐ لماذا تختار ANIS STORE؟</h2>
 <div class="cards">
-
-<details class="card">
-
-<summary>TikTok Followers</summary>
-
-<h3>بدون ضمان</h3>
-
-<table>
-
-<tr>
-<th>الكمية</th>
-<th>السعر</th>
-<th>طلب</th>
-</tr>
-
-<tr>
-<td>1000</td>
-<td>2$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 1000 TikTok Followers بدون ضمان">🛒</a></td>
-</tr>
-
-<tr>
-<td>5000</td>
-<td>10$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 5000 TikTok Followers بدون ضمان">🛒</a></td>
-</tr>
-
-<tr>
-<td>10000</td>
-<td>19.5$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 10000 TikTok Followers بدون ضمان">🛒</a></td>
-</tr></table>
-
-<h3>ضمان شهر</h3>
-
-<table>
-
-<tr>
-<th>الكمية</th>
-<th>السعر</th>
-<th>طلب</th>
-</tr>
-
-<tr>
-<td>1000</td>
-<td>2.6$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 1000 TikTok Followers ضمان شهر">🛒</a></td>
-</tr>
-
-<tr>
-<td>5000</td>
-<td>11.5$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 5000 TikTok Followers ضمان شهر">🛒</a></td>
-</tr>
-
-<tr>
-<td>10000</td>
-<td>21.5$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 10000 TikTok Followers ضمان شهر">🛒</a></td>
-</tr>
-
-</table>
-
-<h3>ضمان 3 أشهر</h3>
-
-<table>
-
-<tr>
-<th>الكمية</th>
-<th>السعر</th>
-<th>طلب</th>
-</tr>
-
-<tr>
-<td>1000</td>
-<td>3.5$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 1000 TikTok Followers ضمان 3 أشهر">🛒</a></td>
-</tr>
-
-<tr>
-<td>5000</td>
-<td>13.5$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 5000 TikTok Followers ضمان 3 أشهر">🛒</a></td>
-</tr>
-
-<tr>
-<td>10000</td>
-<td>27$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 10000 TikTok Followers ضمان 3 أشهر">🛒</a></td>
-</tr>
-
-</table>
-
-</details>
-
-<details class="card">
-
-<summary>📸 Instagram Followers</summary>
-
-<h3>بدون ضمان</h3>
-
-<table>
-
-<tr>
-<th>الكمية</th>
-<th>السعر</th>
-<th>طلب</th>
-</tr>
-
-<tr>
-<td>10000</td>
-<td>2$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 10000 Instagram Followers بدون ضمان">🛒</a></td>
-</tr>
-
-<tr>
-<td>50000</td>
-<td>9.5$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 50000 Instagram Followers بدون ضمان">🛒</a></td>
-</tr>
-
-<tr>
-<td>100000</td>
-<td>18$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 100000 Instagram Followers بدون ضمان">🛒</a></td>
-</tr>
-
-</table>
-
-<p style="margin-top:15px;text-align:center;">
-📞 من 1000 إلى 100000 تواصل عبر واتساب.
-</p><h3>ضمان شهر</h3>
-
-<table>
-
-<tr>
-<th>الكمية</th>
-<th>السعر</th>
-<th>طلب</th>
-</tr>
-
-<tr>
-<td>10000</td>
-<td>4$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 10000 Instagram Followers ضمان شهر">🛒</a></td>
-</tr>
-
-<tr>
-<td>50000</td>
-<td>16.5$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 50000 Instagram Followers ضمان شهر">🛒</a></td>
-</tr>
-
-</table>
-
-<p style="text-align:center;">
-📞 من 1000 إلى 100000 تواصل عبر واتساب.
+<div class="card reveal">
+<h3>⚡ تنفيذ سريع</h3>
+<p>
+معظم الطلبات تبدأ في التنفيذ خلال وقت قصير.
 </p>
-
-<h3>ضمان 3 أشهر</h3>
-
-<table>
-
-<tr>
-<th>الكمية</th>
-<th>السعر</th>
-<th>طلب</th>
-</tr>
-
-<tr>
-<td>10000</td>
-<td>5$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 10000 Instagram Followers ضمان 3 أشهر">🛒</a></td>
-</tr>
-
-<tr>
-<td>50000</td>
-<td>18$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 50000 Instagram Followers ضمان 3 أشهر">🛒</a></td>
-</tr>
-
-</table>
-
-<p style="text-align:center;">
-📞 من 1000 إلى 100000 تواصل عبر واتساب.
+</div>
+<div class="card reveal">
+<h3>🔒 أمان كامل</h3>
+<p>
+لا نطلب كلمة السر، فقط الرابط أو الـ ID حسب الخدمة.
 </p>
-
-</details>
-
+</div>
+<div class="card reveal">
+<h3>💰 أسعار منافسة</h3>
+<p>
+أسعار مناسبة مع جودة عالية ودعم مستمر.
+</p>
+</div>
+<div class="card reveal">
+<h3>📞 دعم 24/7</h3>
+<p>
+يمكنك التواصل معنا عبر واتساب في أي وقت.
+</p>
+</div>
+</div>
+</section>
+<!-- ===== آراء العملاء ===== -->
+<section class="section">
+<h2>💬 آراء العملاء</h2>
+<div class="cards">
+<div class="card reveal">
+⭐⭐⭐⭐⭐
+<p style="margin-top:15px;">
+أفضل خدمة جربتها، التنفيذ كان سريع جدًا.
+</p>
+</div>
+<div class="card reveal">
+⭐⭐⭐⭐⭐
+<p style="margin-top:15px;">
+أسعار ممتازة والدعم متعاون.
+</p>
+</div>
+<div class="card reveal">
+⭐⭐⭐⭐⭐
+<p style="margin-top:15px;">
+أتعامل مع ANIS STORE منذ مدة وأنصح به.
+</p>
+</div>
+</div>
+</section>
+<script>
+const reveals=document.querySelectorAll(".reveal");
+function revealCards(){
+reveals.forEach(card=>{
+const top=card.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+card.style.opacity="1";
+card.style.transform="translateY(0)";
+}
+});
+}
+reveals.forEach(card=>{
+card.style.opacity="0";
+card.style.transform="translateY(40px)";
+card.style.transition="0.8s";
+});
+window.addEventListener("scroll",revealCards);
+revealCards();
+</script>
+<!-- ================= FAQ ================= -->
+<section class="section">
+<h2>❓ الأسئلة الشائعة</h2>
+<div class="cards">
 <details class="card">
-
-<summary>📘 Facebook Followers</summary>
-
-<h3>بدون ضمان</h3>
-
-<table>
-
-<tr>
-<th>الكمية</th>
-<th>السعر</th>
-<th>طلب</th>
-</tr>
-
-<tr>
-<td>10000</td>
-<td>3$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 10000 Facebook Followers بدون ضمان">🛒</a></td>
-</tr>
-
-<tr>
-<td>50000</td>
-<td>12.5$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 50000 Facebook Followers بدون ضمان">🛒</a></td>
-</tr>
-
-<tr>
-<td>100000</td>
-<td>24.5$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 100000 Facebook Followers بدون ضمان">🛒</a></td>
-</tr>
-
-</table>
-<h3>ضمان شهر</h3>
-<table>
-<tr>
-<th>الكمية</th>
-<th>السعر</th>
-<th>طلب</th>
-</tr>
-<tr>
-<td>10000</td>
-<td>3.5$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 10000 Facebook Followers ضمان شهر">🛒</a></td>
-</tr>
-<tr>
-<td>50000</td>
-<td>13.5$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 50000 Facebook Followers ضمان شهر">🛒</a></td>
-</tr>
-</table>
-<p style="text-align:center;">
-📞 من 1000 إلى 100000 تواصل عبر واتساب.
-</p>
-<h3>ضمان 3 أشهر</h3>
-<table>
-<tr>
-<th>الكمية</th>
-<th>السعر</th>
-<th>طلب</th>
-</tr>
-<tr>
-<td>10000</td>
-<td>4$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 10000 Facebook Followers ضمان 3 أشهر">🛒</a></td>
-</tr>
-<tr>
-<td>50000</td>
-<td>15$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد 50000 Facebook Followers ضمان 3 أشهر">🛒</a></td>
-</tr>
-</table>
-<p style="text-align:center;">
-📞 من 1000 إلى 100000 تواصل عبر واتساب.
+<summary>⏳ متى يبدأ تنفيذ الطلب؟</summary>
+<p style="margin-top:15px;">
+يبدأ التنفيذ حسب نوع الخدمة، وغالبًا خلال وقت قصير بعد تأكيد الطلب.
 </p>
 </details>
 <details class="card">
-<summary>💎 Free Fire (ID)</summary>
-<table>
-<tr>
-<th>الخدمة</th>
-<th>السعر</th>
-<th>طلب</th>
-</tr>
-<tr><td>110 Diamonds</td><td>1.5$</td><td><a class="order-btn" href="https://wa.me/213797310724?text=أريد شحن 110 Diamonds">🛒</a></td></tr>
-<tr><td>310 Diamonds</td><td>4$</td><td><a class="order-btn" href="https://wa.me/213797310724?text=أريد شحن 310 Diamonds">🛒</a></td></tr>
-<tr><td>530 Diamonds</td><td>6$</td><td><a class="order-btn" href="https://wa.me/213797310724?text=أريد شحن 530 Diamonds">🛒</a></td></tr>
-<tr><td>1080 Diamonds</td><td>11$</td><td><a class="order-btn" href="https://wa.me/213797310724?text=أريد شحن 1080 Diamonds">🛒</a></td></tr>
-<tr><td>2200 Diamonds</td><td>22$</td><td><a class="order-btn" href="https://wa.me/213797310724?text=أريد شحن 2200 Diamonds">🛒</a></td></tr>
-<tr><td>عضوية أسبوعية</td><td>4$</td><td><a class="order-btn" href="https://wa.me/213797310724?text=أريد العضوية الأسبوعية">🛒</a></td></tr>
-<tr><td>عضوية شهرية</td><td>14$</td><td><a class="order-btn" href="https://wa.me/213797310724?text=أريد العضوية الشهرية">🛒</a></td></tr>
-<tr><td>شحن المستوى</td><td>5$</td><td><a class="order-btn" href="https://wa.me/213797310724?text=أريد شحن المستوى">🛒</a></td></tr>
-</table>
+<summary>🔒 هل الخدمات آمنة؟</summary>
+<p style="margin-top:15px;">
+نعم، جميع الخدمات آمنة ولا نطلب كلمة المرور، فقط الرابط أو الـ ID عند الحاجة.
+</p>
 </details>
 <details class="card">
-<summary>🎮 اشتراكات التطبيقات</summary>
-<table>
-<tr>
-<th>الاشتراك</th>
-<th>المدة</th>
-<th>السعر</th>
-<th>طلب</th>
-</tr>
-<tr>
-<td>ChatGPT Plus</td>
-<td>شهر</td>
-<td>2$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد اشتراك ChatGPT Plus">🛒</a></td>
-</tr>
-<tr>
-<td>CapCut Pro</td>
-<td>7 أيام</td>
-<td>2$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد اشتراك CapCut Pro 7 أيام">🛒</a></td>
-</tr>
-<tr>
-<td>CapCut Pro</td>
-<td>شهر</td>
-<td>5$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد اشتراك CapCut Pro شهر">🛒</a></td>
-</tr>
-<tr>
-<td>Canva Pro</td>
-<td>3 سنوات</td>
-<td>3$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد اشتراك Canva Pro">🛒</a></td>
-</tr>
-<tr>
-<td>Gemini</td>
-<td>عام</td>
-<td>5$</td>
-<td><a class="order-btn" href="https://wa.me/213797310724?text=أريد اشتراك Gemini">🛒</a></td>
-</tr>
-</table>
+<summary>💳 كيف أقوم بالدفع؟</summary>
+<p style="margin-top:15px;">
+تواصل معنا عبر واتساب وسيتم شرح طريقة الدفع المتاحة.
+</p>
+</details>
+<details class="card">
+<summary>📞 كيف أتواصل معكم؟</summary>
+<p style="margin-top:15px;">
+عن طريق زر الواتساب الموجود في الموقع أو الرقم:
+<br><br>
+<b>+213 797 310 724</b>
+</p>
 </details>
 </div>
 </section>
+<!-- ================= SOCIAL ================= -->
 <section class="section">
-<h2>التواصل</h2>
-<p style="text-align:center;font-size:20px;margin-bottom:20px;">
-📱 WhatsApp : +213 797310724
-</p>
+<h2>🌐 تابعنا</h2>
 <div style="text-align:center;">
-<a class="btn"
-href="https://wa.me/213797310724?text=السلام عليكم، أريد طلب خدمة من ANIS STORE">
-راسلنا الآن
+<a class="btn" href="https://wa.me/213797310724">
+💬 WhatsApp
+</a>
+&nbsp;
+<a class="btn" href="#">
+📸 Instagram
+</a>
+&nbsp;
+<a class="btn" href="#">
+🎵 TikTok
+</a>
+&nbsp;
+<a class="btn" href="#">
+📘 Facebook
 </a>
 </div>
 </section>
+<!-- ================= FOOTER ================= -->
 <footer>
-<p>© 2026 ANIS STORE</p>
-<p style="color:#00aaff;">
-أفضل خدمات TikTok • Instagram • Facebook • Free Fire
+<h2 style="color:#00aaff;">
+ANIS STORE
+</h2>
+<p style="margin:15px 0;">
+أفضل متجر لخدمات السوشيال ميديا وشحن Free Fire.
+</p>
+<p>
+📞 WhatsApp:
+<a href="https://wa.me/213797310724" style="color:#00aaff;text-decoration:none;">
++213 797 310 724
+</a>
+</p>
+<br>
+<hr style="border-color:#333;">
+<br>
+<p style="color:#888;">
+© 2026 ANIS STORE - جميع الحقوق محفوظة
 </p>
 </footer>
-</body>
-</html>
