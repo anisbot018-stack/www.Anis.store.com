@@ -306,7 +306,8 @@ card.style.display="none";
 }
 });
 });
-  <!-- ===== بانر ترحيبي ===== -->
+</script>
+<!-- ===== بانر ترحيبي ===== -->
 <section class="section">
 <div style="
 max-width:900px;
@@ -356,6 +357,48 @@ box-shadow:0 0 30px rgba(0,170,255,.25);
 </div>
 </div>
 </section>
+<!-- ===== آراء العملاء ===== -->
+<section class="section">
+<h2>💬 آراء العملاء</h2>
+<div class="cards">
+<div class="card reveal">
+⭐⭐⭐⭐⭐
+<p style="margin-top:15px;">
+أفضل خدمة جربتها، التنفيذ كان سريع جدًا.
+</p>
+</div>
+<div class="card reveal">
+⭐⭐⭐⭐⭐
+<p style="margin-top:15px;">
+أسعار ممتازة والدعم متعاون.
+</p>
+</div>
+<div class="card reveal">
+⭐⭐⭐⭐⭐
+<p style="margin-top:15px;">
+أتعامل مع ANIS STORE منذ مدة وأنصح به.
+</p>
+</div>
+</div>
+</section>
+<script>
+const reveals=document.querySelectorAll(".reveal");
+function revealCards(){
+reveals.forEach(card=>{
+const top=card.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+card.style.opacity="1";
+card.style.transform="translateY(0)";
+}
+});
+}
+reveals.forEach(card=>{
+card.style.opacity="0";
+card.style.transform="translateY(40px)";
+card.style.transition="0.8s";
+});
+window.addEventListener("scroll",revealCards);
+revealCards();
 </script>
 <details class="card">
 <summary>📸 Instagram Followers</summary>
@@ -754,50 +797,6 @@ box-shadow:0 0 30px rgba(0,170,255,.25);
 📩 بعد الطلب سيتم التواصل معك عبر واتساب لإتمام التفعيل.
 </p>
 </details>
-
-<!-- ===== آراء العملاء ===== -->
-<section class="section">
-<h2>💬 آراء العملاء</h2>
-<div class="cards">
-<div class="card reveal">
-⭐⭐⭐⭐⭐
-<p style="margin-top:15px;">
-أفضل خدمة جربتها، التنفيذ كان سريع جدًا.
-</p>
-</div>
-<div class="card reveal">
-⭐⭐⭐⭐⭐
-<p style="margin-top:15px;">
-أسعار ممتازة والدعم متعاون.
-</p>
-</div>
-<div class="card reveal">
-⭐⭐⭐⭐⭐
-<p style="margin-top:15px;">
-أتعامل مع ANIS STORE منذ مدة وأنصح به.
-</p>
-</div>
-</div>
-</section>
-<script>
-const reveals=document.querySelectorAll(".reveal");
-function revealCards(){
-reveals.forEach(card=>{
-const top=card.getBoundingClientRect().top;
-if(top<window.innerHeight-100){
-card.style.opacity="1";
-card.style.transform="translateY(0)";
-}
-});
-}
-reveals.forEach(card=>{
-card.style.opacity="0";
-card.style.transform="translateY(40px)";
-card.style.transition="0.8s";
-});
-window.addEventListener("scroll",revealCards);
-revealCards();
-</script>
 <!-- ================= FAQ ================= -->
 <section class="section">
 <h2>❓ الأسئلة الشائعة</h2>
@@ -872,6 +871,3 @@ ANIS STORE
 © 2026 ANIS STORE - جميع الحقوق محفوظة
 </p>
 </footer>
-
-
-
